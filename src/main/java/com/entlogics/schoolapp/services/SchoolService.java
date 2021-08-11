@@ -48,20 +48,22 @@ public class SchoolService implements ISchoolService {
 		SchoolSubject ss9 = new SchoolSubject(s3, sub3);
 
 		// create schoolsubject list
-		List<SchoolSubject> ssList = new ArrayList<SchoolSubject>();
+		List<SchoolSubject> ssList1 = new ArrayList<SchoolSubject>();
+		List<SchoolSubject> ssList2 = new ArrayList<SchoolSubject>();
+		List<SchoolSubject> ssList3 = new ArrayList<SchoolSubject>();
 
-		ssList.add(ss1);
-		ssList.add(ss2);
-		ssList.add(ss3);
-		ssList.add(ss4);
-		ssList.add(ss5);
-		ssList.add(ss6);
-		ssList.add(ss7);
-		ssList.add(ss8);
-		ssList.add(ss9);
-		s1.setSubjectsOfSchool(ssList);
-		s2.setSubjectsOfSchool(ssList);
-		s3.setSubjectsOfSchool(ssList);
+		ssList1.add(ss1);
+		ssList1.add(ss2);
+		ssList1.add(ss3);
+		ssList2.add(ss4);
+		ssList2.add(ss5);
+		ssList2.add(ss6);
+		ssList3.add(ss7);
+		ssList3.add(ss8);
+		ssList3.add(ss9);
+		s1.setSubjectsOfSchool(ssList1);
+		s2.setSubjectsOfSchool(ssList2);
+		s3.setSubjectsOfSchool(ssList3);
 		// create Class objects
 		SchoolClass c1 = new SchoolClass(1, "STD-1");
 		SchoolClass c2 = new SchoolClass(2, "STD-2");
@@ -205,9 +207,31 @@ public class SchoolService implements ISchoolService {
 	@Override
 
 	public List<Subject> getAllSubjects(int schoolId) {
-		List<Subject> subjectsOfSchool = new ArrayList();
+		
+		School s = null;
+		try {
+			s = listOfSchools.get(schoolId - 1);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-		return subjectsOfSchool;
+		List<SchoolSubject> subjectsOfSchool = s.getSubjectsOfSchool();
+
+	
+		List<Subject> subjects = new ArrayList<Subject>();
+
+		
+		ListIterator litr = subjectsOfSchool.listIterator();
+
+		while (litr.hasNext()) {
+
+			SchoolSubject ss= (SchoolSubject) litr.next();
+
+			subjects.add(ss.getSubject());
+		}
+
+
+		return subjects;
 	}
 
 	@Override

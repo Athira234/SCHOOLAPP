@@ -6,6 +6,23 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+		body
+		{
+		    counter-reset: Serial;          
+		}
+
+		table
+		{
+		    border-collapse: separate;
+		}
+
+		tr td:first-child:before
+		{
+		  counter-increment: Serial;      
+		  content: counter(Serial); 
+		}
+	</style>
 </head>
 <body>
 	<center><U>
@@ -16,7 +33,7 @@
 
 			<c:forEach items="${classList}" var="sclass">
 				<tr>
-					<td><c:out value="${sclass.classId}" /></td>
+					<td></td>
 					<td><c:out value="${sclass.className}" /></td>
 
 				</tr>

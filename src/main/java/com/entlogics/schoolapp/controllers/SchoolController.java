@@ -4,7 +4,7 @@ import java.util.List;
 
 import java.util.ListIterator;
 
-import javax.security.auth.Subject;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -23,6 +23,7 @@ import com.entlogics.schoolapp.models.School;
 import com.entlogics.schoolapp.models.SchoolClass;
 import com.entlogics.schoolapp.models.SchoolSubject;
 import com.entlogics.schoolapp.models.Student;
+import com.entlogics.schoolapp.models.Subject;
 import com.entlogics.schoolapp.services.ISchoolService;
 
 @Controller
@@ -107,6 +108,19 @@ public class SchoolController {
 	String getAllSubjectsOfSchool(@PathVariable int schoolId, Model model)
 
 	{
+		List<Subject> subjects = iSchoolService.getAllSubjects(schoolId);
+
+		ListIterator litr = subjects.listIterator();
+
+		while (litr.hasNext()) {
+
+			Subject s = (Subject) litr.next();
+
+			
+		}
+		
+		model.addAttribute("subjectList", subjects);
+
 
 		return "subjects";
 	}
