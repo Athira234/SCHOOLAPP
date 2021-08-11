@@ -207,7 +207,7 @@ public class SchoolService implements ISchoolService {
 	@Override
 
 	public List<Subject> getAllSubjects(int schoolId) {
-		
+		List<Subject> subjects = new ArrayList<Subject>();
 		School s = null;
 		try {
 			s = listOfSchools.get(schoolId - 1);
@@ -217,19 +217,14 @@ public class SchoolService implements ISchoolService {
 
 		List<SchoolSubject> subjectsOfSchool = s.getSubjectsOfSchool();
 
-	
-		List<Subject> subjects = new ArrayList<Subject>();
-
-		
 		ListIterator litr = subjectsOfSchool.listIterator();
 
 		while (litr.hasNext()) {
 
-			SchoolSubject ss= (SchoolSubject) litr.next();
+			SchoolSubject ss = (SchoolSubject) litr.next();
 
 			subjects.add(ss.getSubject());
 		}
-
 
 		return subjects;
 	}
