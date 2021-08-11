@@ -4,7 +4,6 @@ import java.util.List;
 
 import java.util.ListIterator;
 
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -116,11 +115,9 @@ public class SchoolController {
 
 			Subject s = (Subject) litr.next();
 
-			
 		}
-		
-		model.addAttribute("subjectList", subjects);
 
+		model.addAttribute("subjectList", subjects);
 
 		return "subjects";
 	}
