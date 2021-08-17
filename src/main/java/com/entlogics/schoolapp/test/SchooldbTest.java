@@ -12,7 +12,7 @@ public class SchooldbTest {
 		   SchoolRepository repo=new SchoolRepository();
 		      List<School> schools= repo.findAllSchools();
 		      
-		      System.out.println(schools);
+		      System.out.println("school list is :"+schools);
 		      
 
 }
