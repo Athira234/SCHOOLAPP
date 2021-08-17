@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="dt_class")
+@Table(name = "dt_class")
 public class SchoolClass {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +26,12 @@ public class SchoolClass {
 	private String classTeacherName;
 
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name ="school_id")
+	@JoinColumn(name = "school_id")
 	private School schoolOfClass;
 
 	@OneToMany(mappedBy = "classOfStudent", cascade = CascadeType.ALL)
 	private List<Student> studentsOfClass;
-	
+
 	@OneToMany(mappedBy = "classOfExam", cascade = CascadeType.ALL)
 	private List<Exam> examsOfClass;
 
@@ -65,13 +65,13 @@ public class SchoolClass {
 		this.classTeacherName = classTeacherName;
 	}
 
-/*	public School getSchoolOfClass() {
+	public School getSchoolOfClass() {
 		return schoolOfClass;
 	}
 
 	public void setSchoolOfClass(School schoolOfClass) {
 		this.schoolOfClass = schoolOfClass;
-	}*/
+	}
 
 	public List<Student> getStudentsOfClass() {
 		return studentsOfClass;
