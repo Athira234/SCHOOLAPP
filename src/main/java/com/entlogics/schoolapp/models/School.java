@@ -30,17 +30,17 @@ public class School {
 	private String schoolEmail;
 	@Column(name = "phonenumber")
 	private String schoolPhone;
-	
+
 	@OneToMany(mappedBy = "classOfStudent", cascade = CascadeType.ALL)
 	List<Student> studentsOfSchool;
-	
+
 	@OneToMany(mappedBy = "classOfExam", cascade = CascadeType.ALL)
 	List<Exam> examsOfSchool;
-	
+
 	@OneToMany(mappedBy = "school", cascade = CascadeType.ALL)
 	List<SchoolSubject> subjectsOfSchool;
-	
-	@OneToMany(mappedBy ="schoolOfClass", cascade = CascadeType.ALL)
+
+	@OneToMany(mappedBy = "schoolOfClass", cascade = CascadeType.ALL)
 	private List<SchoolClass> classesOfSchool;
 
 	public School(int schoolId, String schoolName, String schoolAddress, String schoolPhone) {
