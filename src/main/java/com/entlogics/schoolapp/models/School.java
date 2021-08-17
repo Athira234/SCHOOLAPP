@@ -119,7 +119,7 @@ public class School {
 		this.subjectsOfSchool = subjectsOfSchool;
 	}
 
-	/*public List<SchoolClass> getClassesOfSchool() {
+	public List<SchoolClass> getClassesOfSchool() {
 		return classesOfSchool;
 	}
 
@@ -133,5 +133,5 @@ public class School {
 				+ ", schoolEmail=" + schoolEmail + ", schoolPhone=" + schoolPhone + ", studentsOfSchool="
 				+ studentsOfSchool + ", examsOfSchool=" + examsOfSchool + ", subjectsOfSchool=" + subjectsOfSchool
 				+ ", classesOfSchool=" + classesOfSchool + "]";
-	}*/
+	}
 }
