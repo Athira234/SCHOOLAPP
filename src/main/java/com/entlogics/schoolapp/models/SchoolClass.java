@@ -2,13 +2,38 @@ package com.entlogics.schoolapp.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="dt_class")
 public class SchoolClass {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "class_id")
 	private int classId;
+	@Column(name = "class_name")
 	private String className;
+	@Column(name = "class_teacher")
 	private String classTeacherName;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name ="school_id")
 	private School schoolOfClass;
-	List<Student> studentsOfClass;
-	List<Exam> examsOfClass;
+
+	@OneToMany(mappedBy = "classOfStudent", cascade = CascadeType.ALL)
+	private List<Student> studentsOfClass;
+	
+	@OneToMany(mappedBy = "classOfExam", cascade = CascadeType.ALL)
+	private List<Exam> examsOfClass;
 
 	public SchoolClass(int classId, String className) {
 		super();
@@ -40,13 +65,13 @@ public class SchoolClass {
 		this.classTeacherName = classTeacherName;
 	}
 
-	public School getSchoolOfClass() {
+/*	public School getSchoolOfClass() {
 		return schoolOfClass;
 	}
 
 	public void setSchoolOfClass(School schoolOfClass) {
 		this.schoolOfClass = schoolOfClass;
-	}
+	}*/
 
 	public List<Student> getStudentsOfClass() {
 		return studentsOfClass;
@@ -63,7 +88,5 @@ public class SchoolClass {
 	public void setExamsOfClass(List<Exam> examsOfClass) {
 		this.examsOfClass = examsOfClass;
 	}
-
-	
 
 }

@@ -2,17 +2,46 @@ package com.entlogics.schoolapp.models;
 
 import java.util.List;
 
-public class School {
-	private int schoolId;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.JoinColumn;
 
+@Entity
+@Table(name = "dt_school")
+public class School {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "school_id")
+	private int schoolId;
+	@Column(name = "name")
 	private String schoolName;
+	@Column(name = "address")
 	private String schoolAddress;
+	@Column(name = "email")
 	private String schoolEmail;
+	@Column(name = "phonenumber")
 	private String schoolPhone;
+	
+	@OneToMany(mappedBy = "classOfStudent", cascade = CascadeType.ALL)
 	List<Student> studentsOfSchool;
+	
+	@OneToMany(mappedBy = "classOfExam", cascade = CascadeType.ALL)
 	List<Exam> examsOfSchool;
+	
+	@OneToMany(mappedBy = "school", cascade = CascadeType.ALL)
 	List<SchoolSubject> subjectsOfSchool;
-	List<SchoolClass> classesOfSchool;
+	
+	@OneToMany(mappedBy ="schoolOfClass", cascade = CascadeType.ALL)
+	private List<SchoolClass> classesOfSchool;
 
 	public School(int schoolId, String schoolName, String schoolAddress, String schoolPhone) {
 		super();
@@ -22,27 +51,9 @@ public class School {
 		this.schoolPhone = schoolPhone;
 	}
 
-	
-	
-
-
-
-
-
-
-
 	public School() {
 		// TODO Auto-generated constructor stub
 	}
-
-
-
-
-
-
-
-
-
 
 	public int getSchoolId() {
 		return schoolId;
@@ -108,18 +119,19 @@ public class School {
 		this.subjectsOfSchool = subjectsOfSchool;
 	}
 
-	public List<SchoolClass> getClassesOfSchool() {
+	/*public List<SchoolClass> getClassesOfSchool() {
 		return classesOfSchool;
 	}
 
 	public void setClassesOfSchool(List<SchoolClass> classesOfSchool) {
 		this.classesOfSchool = classesOfSchool;
 	}
+
 	@Override
 	public String toString() {
 		return "School [schoolId=" + schoolId + ", schoolName=" + schoolName + ", schoolAddress=" + schoolAddress
 				+ ", schoolEmail=" + schoolEmail + ", schoolPhone=" + schoolPhone + ", studentsOfSchool="
 				+ studentsOfSchool + ", examsOfSchool=" + examsOfSchool + ", subjectsOfSchool=" + subjectsOfSchool
 				+ ", classesOfSchool=" + classesOfSchool + "]";
-	}
+	}*/
 }

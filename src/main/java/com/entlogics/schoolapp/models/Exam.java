@@ -2,13 +2,44 @@ package com.entlogics.schoolapp.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+
+@Entity
+@Table(name = "dt_exam")
 public class Exam {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "exam_id")
 	private int examId;
+	@Column(name = "exam_name")
 	private String examName;
+	@Column(name = "exam_date")
 	private String examDate;
+	@Column(name = "exam_time")
 	private String examTime;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "subject_id")
 	private Subject subjectForExam;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "class_id")
 	private SchoolClass classOfExam;
+
+	@OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
 	List<StudentExam> studentsOfExam;
 
 	public Exam(int examId, String examName, String examDate, String examTime) {

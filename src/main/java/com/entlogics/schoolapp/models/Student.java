@@ -2,14 +2,44 @@ package com.entlogics.schoolapp.models;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "dt_student")
 public class Student {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "student_id")
 	private int studentId;
+	@Column(name = "student_name")
 	private String studentName;
+	@Column(name = "roll_number")
+	private int rollNumber;
+	@Column(name = "student_address")
 	private String studentAddress;
+	@Column(name = "email")
 	private String studentEmail;
+	@Column(name = "phonenumber")
 	private String studentPhone;
+
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "class_id")
 	private SchoolClass classOfStudent;
+	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
 	List<StudentExam> examsForStudent;
+	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
 	List<StudentSubject> subjectsOfStudent;
 
 	public Student(int studentId, String studentName) {
@@ -80,6 +110,14 @@ public class Student {
 
 	public void setSubjectsOfStudent(List<StudentSubject> subjectsOfStudent) {
 		this.subjectsOfStudent = subjectsOfStudent;
+	}
+
+	public int getRollNumber() {
+		return rollNumber;
+	}
+
+	public void setRollNumber(int rollNumber) {
+		this.rollNumber = rollNumber;
 	}
 
 }

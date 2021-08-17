@@ -1,9 +1,29 @@
 package com.entlogics.schoolapp.models;
 
-public class SchoolSubject {
+import java.io.Serializable;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="lt_school_subject")
+@IdClass(SchoolSubject.class)
+public class SchoolSubject implements Serializable {
+	@Id
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
+	@JoinColumn(name = "school_id")
 	private School school;
+	@Id
+	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
+	@JoinColumn(name = "subject_id")
 	private Subject subject;
+	@Column(name="subject_HOD")
 	private String subjectHOD;
 
 	public SchoolSubject(School school, Subject subject) {
