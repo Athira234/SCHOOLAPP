@@ -8,12 +8,16 @@ import com.entlogics.schoolapp.repo.SchoolRepository;
 public class SchooldbTest {
 
 	public static void main(String[] args) {
-	
-		   SchoolRepository repo=new SchoolRepository();
-		      List<School> schools= repo.findAllSchools();
-		      
-		      System.out.println("school list is :"+schools);
-		      
 
-}
+		SchoolRepository repo = new SchoolRepository();
+		repo.testfindAllSchools();
+		repo.testfindSchool();
+		repo.testfindAllClasses();
+		repo.testfindAllSubjects();
+		repo.testfindAllStudents();
+		repo.testfindAllExams();
+		//repo.testCreateSchool();
+		repo.testEditSchool();
+		repo.testdeleteSchool();
+	}
 }

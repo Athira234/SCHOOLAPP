@@ -43,11 +43,13 @@ public class School {
 	@OneToMany(mappedBy = "schoolOfClass", cascade = CascadeType.ALL)
 	private List<SchoolClass> classesOfSchool;
 
-	public School(int schoolId, String schoolName, String schoolAddress, String schoolPhone) {
+	
+	public School(int schoolId, String schoolName, String schoolAddress,String schoolPhone) {
 		super();
 		this.schoolId = schoolId;
 		this.schoolName = schoolName;
 		this.schoolAddress = schoolAddress;
+		this.schoolEmail = schoolEmail;
 		this.schoolPhone = schoolPhone;
 	}
 

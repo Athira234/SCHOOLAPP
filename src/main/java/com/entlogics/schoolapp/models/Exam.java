@@ -31,11 +31,11 @@ public class Exam {
 	@Column(name = "exam_time")
 	private String examTime;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinColumn(name = "subject_id")
 	private Subject subjectForExam;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinColumn(name = "class_id")
 	private SchoolClass classOfExam;
 
@@ -48,6 +48,11 @@ public class Exam {
 		this.examName = examName;
 		this.examDate = examDate;
 		this.examTime = examTime;
+	}
+
+	public Exam() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 	public Subject getSubjectForExam() {
@@ -105,5 +110,12 @@ public class Exam {
 	public void setStudentsOfExam(List<StudentExam> studentsOfExam) {
 		this.studentsOfExam = studentsOfExam;
 	}
+
+	@Override
+	public String toString() {
+		return "Exam [examId=" + examId + ", examName=" + examName + "]";
+	}
+
+	
 
 }

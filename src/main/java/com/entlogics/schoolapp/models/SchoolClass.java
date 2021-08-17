@@ -35,6 +35,11 @@ public class SchoolClass {
 	@OneToMany(mappedBy = "classOfExam", cascade = CascadeType.ALL)
 	private List<Exam> examsOfClass;
 
+	public SchoolClass() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public SchoolClass(int classId, String className) {
 		super();
 		this.classId = classId;
@@ -88,5 +93,18 @@ public class SchoolClass {
 	public void setExamsOfClass(List<Exam> examsOfClass) {
 		this.examsOfClass = examsOfClass;
 	}
+
+	@Override
+	public String toString() {
+		return "SchoolClass [classId=" + classId + ", className=" + className + ", classTeacherName=" + classTeacherName
+				+ "]";
+	}
+
+	/*@Override
+	public String toString() {
+		return "SchoolClass [classId=" + classId + ", className=" + className + ", classTeacherName=" + classTeacherName
+				+ ", schoolOfClass=" + schoolOfClass + ", studentsOfClass=" + studentsOfClass + ", examsOfClass="
+				+ examsOfClass + "]";
+	}*/
 
 }

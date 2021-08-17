@@ -35,6 +35,11 @@ public class Subject {
 	@OneToMany(mappedBy = "subject", cascade = CascadeType.ALL)
 	List<SchoolSubject> schoolsHavingSubject;
 
+	public Subject() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public Subject(int subjectId, String subjectName) {
 		super();
 		this.subjectId = subjectId;
@@ -88,5 +93,12 @@ public class Subject {
 	public void setElective(boolean isElective) {
 		this.isElective = isElective;
 	}
+
+	@Override
+	public String toString() {
+		return "Subject [subjectId=" + subjectId + ", subjectName=" + subjectName + ", isElective=" + isElective + "]";
+	}
+
+	
 
 }

@@ -23,6 +23,7 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "student_id")
 	private int studentId;
+
 	@Column(name = "student_name")
 	private String studentName;
 	@Column(name = "roll_number")
@@ -34,13 +35,18 @@ public class Student {
 	@Column(name = "phonenumber")
 	private String studentPhone;
 
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinColumn(name = "class_id")
 	private SchoolClass classOfStudent;
 	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
 	List<StudentExam> examsForStudent;
 	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
 	List<StudentSubject> subjectsOfStudent;
+
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	public Student(int studentId, String studentName) {
 		super();
@@ -119,5 +125,12 @@ public class Student {
 	public void setRollNumber(int rollNumber) {
 		this.rollNumber = rollNumber;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [studentId=" + studentId + ", studentName=" + studentName + "]";
+	}
+
+	
 
 }

@@ -26,6 +26,13 @@ public class SchoolSubject implements Serializable {
 	@Column(name="subject_HOD")
 	private String subjectHOD;
 
+	
+
+	public SchoolSubject() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public SchoolSubject(School school, Subject subject) {
 		super();
 		this.school = school;
@@ -55,5 +62,7 @@ public class SchoolSubject implements Serializable {
 	public void setSubjectHOD(String subjectHOD) {
 		this.subjectHOD = subjectHOD;
 	}
+
+
 
 }
