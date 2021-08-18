@@ -200,10 +200,10 @@ public class SchoolRepository implements ISchoolRepository {
 	@Override
 	public void deleteSchool(int schoolId) {
 		session.beginTransaction();
-		//School s = session.get(School.class, schoolId);
-		session.createQuery("delete from School where school_id="+schoolId).executeUpdate();
+		// School s = session.get(School.class, schoolId);
+		session.createQuery("delete from School where school_id=" + schoolId).executeUpdate();
 		session.getTransaction().commit();
-		System.out.println("deleted school :"+schoolId);
+		System.out.println("deleted school :" + schoolId);
 	}
 
 	public void testdeleteSchool() {
@@ -211,4 +211,16 @@ public class SchoolRepository implements ISchoolRepository {
 		deleteSchool(15);
 	}
 
+	public static void main(String[] args) {
+		SchoolRepository repo = new SchoolRepository();
+		repo.testfindAllSchools();
+		repo.testfindSchool();
+		repo.testfindAllClasses();
+		repo.testfindAllSubjects();
+		repo.testfindAllStudents();
+		repo.testfindAllExams();
+		// repo.testCreateSchool();
+		repo.testEditSchool();
+		repo.testdeleteSchool();
+	}
 }
