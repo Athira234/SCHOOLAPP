@@ -3,6 +3,8 @@ package com.entlogics.schoolapp.services;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.entlogics.schoolapp.models.Exam;
 import com.entlogics.schoolapp.models.School;
 import com.entlogics.schoolapp.models.SchoolClass;

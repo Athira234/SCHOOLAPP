@@ -1,13 +1,12 @@
 package com.entlogics.schoolapp.repo;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
-
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import com.entlogics.schoolapp.models.Exam;
 import com.entlogics.schoolapp.models.School;
 import com.entlogics.schoolapp.models.SchoolClass;
@@ -17,7 +16,14 @@ import com.entlogics.schoolapp.models.StudentExam;
 import com.entlogics.schoolapp.models.StudentSubject;
 import com.entlogics.schoolapp.models.Subject;
 
+@Repository
+@Component
 public class SchoolRepository implements ISchoolRepository {
+
+	public SchoolRepository() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
 	// create session factory
 	SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(School.class)
@@ -211,7 +217,7 @@ public class SchoolRepository implements ISchoolRepository {
 		deleteSchool(15);
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		SchoolRepository repo = new SchoolRepository();
 		repo.testfindAllSchools();
 		repo.testfindSchool();
@@ -222,5 +228,5 @@ public class SchoolRepository implements ISchoolRepository {
 		// repo.testCreateSchool();
 		repo.testEditSchool();
 		repo.testdeleteSchool();
-	}
+	}*/
 }

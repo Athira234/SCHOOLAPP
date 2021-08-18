@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -26,6 +28,7 @@ import com.entlogics.schoolapp.models.Subject;
 import com.entlogics.schoolapp.services.ISchoolService;
 
 @Controller
+@ComponentScan
 public class SchoolController {
 
 	ISchoolService iSchoolService;
