@@ -27,7 +27,7 @@ public interface ISchoolRepository {
 
 	public int createSchool(School school);
 
-	public void editSchool(School school, int schoolId);
+	public void editSchool(School school);
 
 	public void deleteSchool(int schoolId);
 }

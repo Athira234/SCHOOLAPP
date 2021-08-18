@@ -172,11 +172,9 @@ public class SchoolController {
 	@RequestMapping("/schools/edit/{schoolId}")
 	String editSchool(@PathVariable int schoolId, Model m) {
 
-		System.out.println("inside createschool");
 		School school;
 		school = iSchoolService.getSchool(schoolId);
 		System.out.println(school);
-		// iSchoolService.createSchool(theSchool);
 
 		m.addAttribute("school", school);
 		return "edit-school-form";
@@ -185,7 +183,7 @@ public class SchoolController {
 	@RequestMapping("/schools/edit/editdetails")
 	public String editSave(@ModelAttribute("theschool") School school) {
 		// inside edit save
-		iSchoolService.editSchool(school, school.getSchoolId());
+		iSchoolService.editSchool(school);
 		return "success";
 	}
 

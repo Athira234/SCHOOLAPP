@@ -1,4 +1,5 @@
 package com.entlogics.schoolapp.repo;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
@@ -170,15 +171,13 @@ public class SchoolRepository implements ISchoolRepository {
 
 	@Override
 	public int createSchool(School school) {
+
 		// save school
 		session.beginTransaction();
-		school.setSchoolName("KPRGSGHSS");
-		school.setSchoolAddress("KANNUR");
-		school.setSchoolEmail("kpr@gmail.com");
-		school.setSchoolPhone("2780622");
 		session.save(school);
 		session.getTransaction().commit();
 		return school.getSchoolId();
+
 	}
 
 	public void testCreateSchool() {
@@ -187,37 +186,45 @@ public class SchoolRepository implements ISchoolRepository {
 	}
 
 	@Override
-	public void editSchool(School school, int schoolId) {
-		session.beginTransaction();
-		school.setSchoolName("MAMBARAM HSS");
-		school.setSchoolAddress("KANNUR");
-		school.setSchoolEmail("HSS@gmail.com");
-		school.setSchoolPhone("2780623");
-		session.save(school);
-		session.getTransaction().commit();
-		System.out.println("EDITED");
+	public void editSchool(School school) {
+	
+		try {
+			System.out.println("INSIDE editschool()");
+			session.beginTransaction();
+			session.clear();
+			session.update(school);
+			session.getTransaction().commit();
+			System.out.println("EDITED");
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+		}
 	}
 
 	public void testEditSchool() {
 		School school = findSchool(1);
-		editSchool(school, 1);
+		//editSchool(school, 1);
 	}
 
 	@Override
 	public void deleteSchool(int schoolId) {
-		session.beginTransaction();
-		// School s = session.get(School.class, schoolId);
-		session.createQuery("delete from School where school_id=" + schoolId).executeUpdate();
-		session.getTransaction().commit();
-		System.out.println("deleted school :" + schoolId);
+		try {
+
+			session.beginTransaction();
+			// School s = session.get(School.class, schoolId);
+			session.createQuery("delete from School where school_id=" + schoolId).executeUpdate();
+			session.getTransaction().commit();
+			System.out.println("deleted school :" + schoolId);
+		} catch (Exception e) {
+			session.getTransaction().rollback();
+		}
 	}
 
 	public void testdeleteSchool() {
 
-		deleteSchool(15);
+		deleteSchool(8);
 	}
 
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		SchoolRepository repo = new SchoolRepository();
 		repo.testfindAllSchools();
 		repo.testfindSchool();
@@ -228,5 +235,5 @@ public class SchoolRepository implements ISchoolRepository {
 		// repo.testCreateSchool();
 		repo.testEditSchool();
 		repo.testdeleteSchool();
-	}*/
+	}
 }

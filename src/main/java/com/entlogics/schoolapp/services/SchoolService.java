@@ -118,7 +118,7 @@ public class SchoolService implements ISchoolService {
 	public School getSchool(int schoolId) {
 
 		School school = repo.findSchool(schoolId);
-		;
+		
 
 		return school;
 
@@ -162,8 +162,8 @@ public class SchoolService implements ISchoolService {
 	}
 
 	@Override
-	public void editSchool(School school, int schoolId) {
-		repo.editSchool(school, schoolId);
+	public void editSchool(School school) {
+		repo.editSchool(school);
 
 	}
 
