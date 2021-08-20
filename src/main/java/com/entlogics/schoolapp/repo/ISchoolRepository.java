@@ -2,6 +2,7 @@ package com.entlogics.schoolapp.repo;
 
 import java.util.List;
 
+
 import org.springframework.stereotype.Repository;
 
 import com.entlogics.schoolapp.models.Exam;
