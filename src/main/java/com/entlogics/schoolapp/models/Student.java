@@ -23,6 +23,8 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "student_id")
 	private int studentId;
+	@Column(name = "class_id")
+	private int studentClassId;
 
 	@Column(name = "student_name")
 	private String studentName;
@@ -36,7 +38,7 @@ public class Student {
 	private String studentPhone;
 
 	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-	@JoinColumn(name = "class_id")
+	@JoinColumn(name = "class_id",referencedColumnName="class_id",insertable=false, updatable=false)
 	private SchoolClass classOfStudent;
 	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
 	List<StudentExam> examsForStudent;
@@ -126,6 +128,13 @@ public class Student {
 		this.rollNumber = rollNumber;
 	}
 
+	public int getStudentClassId() {
+		return studentClassId;
+	}
+
+	public void setStudentClassId(int studentClassId) {
+		this.studentClassId = studentClassId;
+	}
 	@Override
 	public String toString() {
 		return "Student [studentId=" + studentId + ", studentName=" + studentName + "]";

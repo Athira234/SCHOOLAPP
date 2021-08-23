@@ -173,10 +173,36 @@ public class SchoolService implements ISchoolService {
 
 	}
 
-	@Override
-	public void createDatabase() {
-		// TODO Auto-generated method stub
 
+
+	@Override
+	public int addClass(SchoolClass c) {
+		System.out.println("inside addClass() SchoolService");
+		repo.addClass(c);
+		return c.getClassId();
+		
+	}
+
+	@Override
+	public int addStudent(Student s) {
+		System.out.println("inside addStudent() SchoolService");
+		repo.addStudent(s);
+		return s.getStudentId();
+	}
+
+	@Override
+	public int addExam(Exam e) {
+		System.out.println("inside addExam() SchoolService");
+		repo.addExam(e);
+		return e.getExamId();
+	}
+
+	@Override
+	public int addSubject(Subject sub) {
+		System.out.println("inside addSubject() SchoolService");
+		repo.addSubject(sub);
+		return sub.getSubjectId();
+		
 	}
 
 }

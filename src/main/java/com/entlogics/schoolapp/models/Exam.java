@@ -24,6 +24,11 @@ public class Exam {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "exam_id")
 	private int examId;
+	@Column(name = "class_id")
+	private int classId;
+	
+	@Column(name = "subject_id")
+	private int subjectId;
 	@Column(name = "exam_name")
 	private String examName;
 	@Column(name = "exam_date")
@@ -32,11 +37,11 @@ public class Exam {
 	private String examTime;
 
 	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-	@JoinColumn(name = "subject_id")
+	@JoinColumn(name = "subject_id",referencedColumnName="subject_id",insertable=false, updatable=false)
 	private Subject subjectForExam;
 
 	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-	@JoinColumn(name = "class_id")
+	@JoinColumn(name = "class_id",referencedColumnName="class_id",insertable=false, updatable=false)
 	private SchoolClass classOfExam;
 
 	@OneToMany(mappedBy = "exam", cascade = CascadeType.ALL)
@@ -110,7 +115,21 @@ public class Exam {
 	public void setStudentsOfExam(List<StudentExam> studentsOfExam) {
 		this.studentsOfExam = studentsOfExam;
 	}
+	public int getClassId() {
+		return classId;
+	}
 
+	public void setClassId(int classId) {
+		this.classId = classId;
+	}
+
+	public int getSubjectId() {
+		return subjectId;
+	}
+
+	public void setSubjectId(int subjectId) {
+		this.subjectId = subjectId;
+	}
 	@Override
 	public String toString() {
 		return "Exam [examId=" + examId + ", examName=" + examName + "]";

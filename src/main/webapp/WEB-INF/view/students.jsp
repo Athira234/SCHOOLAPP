@@ -40,6 +40,8 @@
 
 			</c:forEach>
 		</table>
+		<br><br>
+		<a href="students/addStudent"> <input type="submit" value="ADD NEW STUDENT" /></a><br><br>
 	</center>
 </body>
 </html>

@@ -14,8 +14,7 @@ import com.entlogics.schoolapp.models.Subject;
 
 public interface ISchoolService {
     
-	public void createDatabase();
-	
+
 	public List<School> getAllSchools();
 
 	public School getSchool(int schoolId);
@@ -33,4 +32,10 @@ public interface ISchoolService {
 	public void editSchool(School school);
 
 	public void deleteSchool(int schoolId);
+	public int addClass(SchoolClass c);
+	
+	public int addStudent(Student s);
+	public int addExam(Exam e);
+
+	public int addSubject(Subject sub);
 }

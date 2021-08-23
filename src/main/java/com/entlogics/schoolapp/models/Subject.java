@@ -21,7 +21,7 @@ import javax.persistence.JoinColumn;
 public class Subject {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "subject_id")
+	@Column(name = "subject_id", nullable = false)
 	private int subjectId;
 	@Column(name = "subject_name")
 	private String subjectName;
@@ -86,7 +86,7 @@ public class Subject {
 		this.schoolsHavingSubject = schoolsHavingSubject;
 	}
 
-	public boolean isElective() {
+	public boolean getIsElective() {
 		return isElective;
 	}
 
@@ -98,7 +98,5 @@ public class Subject {
 	public String toString() {
 		return "Subject [subjectId=" + subjectId + ", subjectName=" + subjectName + ", isElective=" + isElective + "]";
 	}
-
-	
 
 }

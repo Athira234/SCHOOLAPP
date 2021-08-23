@@ -18,15 +18,16 @@ import javax.persistence.Table;
 public class SchoolClass {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "class_id")
+	@Column(name = "class_id",nullable=false)
 	private int classId;
 	@Column(name = "class_name")
 	private String className;
 	@Column(name = "class_teacher")
 	private String classTeacherName;
-
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "school_id")
+	@Column(name = "school_id")
+	private int classSchoolId;
+	@ManyToOne
+	@JoinColumn(name = "school_id",referencedColumnName="school_id",insertable=false, updatable=false)
 	private School schoolOfClass;
 
 	@OneToMany(mappedBy = "classOfStudent", cascade = CascadeType.ALL)
@@ -92,6 +93,15 @@ public class SchoolClass {
 
 	public void setExamsOfClass(List<Exam> examsOfClass) {
 		this.examsOfClass = examsOfClass;
+	}
+	
+
+	public int getClassSchoolId() {
+		return classSchoolId;
+	}
+
+	public void setClassSchoolId(int classSchoolId) {
+		this.classSchoolId = classSchoolId;
 	}
 
 	@Override

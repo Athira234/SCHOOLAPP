@@ -20,7 +20,7 @@ import javax.persistence.JoinColumn;
 public class School {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "school_id")
+	@Column(name = "school_id",nullable=false)
 	private int schoolId;
 	@Column(name = "name")
 	private String schoolName;

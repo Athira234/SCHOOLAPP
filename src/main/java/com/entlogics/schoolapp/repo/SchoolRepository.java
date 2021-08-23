@@ -268,4 +268,56 @@ public class SchoolRepository implements ISchoolRepository {
 		repo.testdeleteSchool();
 	}
 
+	@Override
+	public int addClass(SchoolClass c) {
+		System.out.println("Inside addClass() in repo");
+	
+		Session session = sfactory.getSessionFactory().openSession();
+
+		session.beginTransaction();
+		session.save(c);
+		session.getTransaction().commit();
+		return c.getClassId();
+
+	}
+
+	@Override
+	public int addStudent(Student s) {
+		System.out.println("Inside addStudent() in repo");
+	
+		Session session = sfactory.getSessionFactory().openSession();
+	
+		session.beginTransaction();
+		
+		session.save(s);
+		session.getTransaction().commit();
+		return s.getStudentId();
+	}
+
+	@Override
+	public int addExam(Exam e) {
+		System.out.println("Inside addExam() in repo");
+		
+		Session session = sfactory.getSessionFactory().openSession();
+	
+		session.beginTransaction();
+		
+		session.save(e);
+		session.getTransaction().commit();
+		return e.getExamId();		
+	}
+
+	@Override
+	public int addSubject(Subject sub) {
+System.out.println("Inside addSubject() in repo");
+		
+		Session session = sfactory.getSessionFactory().openSession();
+	
+		session.beginTransaction();
+		
+		session.save(sub);
+		session.getTransaction().commit();
+		return sub.getSubjectId();		
+	}
+
 }

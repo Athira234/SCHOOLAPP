@@ -31,4 +31,11 @@ public interface ISchoolRepository {
 	public void editSchool(School school);
 
 	public void deleteSchool(int schoolId);
+	
+	public int addClass(SchoolClass c);
+	public int addStudent(Student s);
+
+	public int addExam(Exam e);
+
+	public int addSubject(Subject sub);
 }

@@ -40,6 +40,8 @@
 
 			</c:forEach>
 		</table>
+		<br><br>
+			<a href="subjects/addSubject"> <input type="submit" value="ADD NEW SUBJECT" /></a><br><br>
 	</center>
 </body>
 </html>

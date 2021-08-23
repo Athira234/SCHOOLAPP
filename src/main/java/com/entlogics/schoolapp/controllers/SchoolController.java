@@ -186,5 +186,90 @@ public class SchoolController {
 		iSchoolService.editSchool(school);
 		return "success";
 	}
+	
+
+	
+	
+	@RequestMapping("/schools/{schoolId}/classes/addClass")
+	String createNewClass(Model m) {
+       
+		System.out.println("inside createclass");
+		SchoolClass theClass = new SchoolClass();
+
+		
+		m.addAttribute("schoolClass", theClass);
+		return "class-form";
+	}
+
+	@RequestMapping("/schools/{schoolId}/classes/classdetails")
+	public String saveClass(@ModelAttribute("schoolClass") SchoolClass c) {
+		System.out.println("Save class");
+		iSchoolService.addClass(c);
+		return "success";
+	}
+	
+	
+	
+	
+	@RequestMapping("/schools/{schoolId}/students/addStudent")
+	String createNewStudent(Model m) {
+
+		System.out.println("inside createstudent");
+		Student theStudent = new Student();
+
+		
+		m.addAttribute("student", theStudent);
+		return "student-form";
+	}
+
+	@RequestMapping("/schools/{schoolId}/students/studentdetails")
+	public String saveStudent(@ModelAttribute("student") Student s) {
+		System.out.println("Save student");
+		iSchoolService.addStudent(s);
+		return "success";
+	}
+	
+	
+
+	@RequestMapping("/schools/{schoolId}/exams/addExam")
+	String createNewExam(Model m) {
+
+		System.out.println("inside createExam");
+		Exam e= new Exam();
+
+		
+		m.addAttribute("exam", e);
+		return "exam-form";
+	}
+
+	@RequestMapping("/schools/{schoolId}/exams/examsdetails")
+	public String saveExam(@ModelAttribute("exam") Exam e) {
+		System.out.println("Save exam");
+		iSchoolService.addExam(e);
+		return "success";
+	}
+	
+	@RequestMapping("/schools/{schoolId}/subjects/addSubject")
+	String createNewSubject(Model m) {
+
+		System.out.println("inside createSubject");
+		Subject sub= new Subject();
+
+		
+		m.addAttribute("subject", sub);
+		return "subject-form";
+	}
+
+	@RequestMapping("/schools/{schoolId}/subjects/subjectdetails")
+	public String saveSubject(@ModelAttribute("subject") Subject sub) {
+		System.out.println("Save subject");
+		iSchoolService.addSubject(sub);
+		return "success";
+	}
+	
+	
+	
+	
+	
 
 }
