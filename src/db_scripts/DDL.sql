@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS `dt_class`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dt_class` (
-  `class_id` int NOT NULL,
+  `class_id` int NOT NULL AUTO_INCREMENT,
   `school_id` int DEFAULT NULL,
   `class_name` varchar(10) DEFAULT NULL,
   `class_teacher` varchar(30) DEFAULT NULL,
@@ -41,7 +41,7 @@ DROP TABLE IF EXISTS `dt_exam`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dt_exam` (
-  `exam_id` int NOT NULL,
+  `exam_id` int NOT NULL AUTO_INCREMENT,
   `subject_id` int DEFAULT NULL,
   `class_id` int DEFAULT NULL,
   `exam_name` varchar(10) DEFAULT NULL,
@@ -102,7 +102,7 @@ DROP TABLE IF EXISTS `dt_subject`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dt_subject` (
-  `subject_id` int NOT NULL,
+  `subject_id` int NOT NULL AUTO_INCREMENT,
   `subject_name` varchar(10) DEFAULT NULL,
   `is_elective` tinyint(1) DEFAULT NULL,
   PRIMARY KEY (`subject_id`)
