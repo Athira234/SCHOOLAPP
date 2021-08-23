@@ -68,7 +68,7 @@ CREATE TABLE `dt_school` (
   `name` varchar(40) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
   `phonenumber` int DEFAULT NULL,
-  `website` varchar(30) DEFAULT NULL,
+  `email` varchar(30) DEFAULT NULL,
   PRIMARY KEY (`school_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
