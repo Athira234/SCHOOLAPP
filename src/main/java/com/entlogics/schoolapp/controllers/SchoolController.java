@@ -151,7 +151,7 @@ public class SchoolController {
 		// iSchoolService.createSchool(theSchool);
 
 		m.addAttribute("school", theSchool);
-		return "school-form";
+		return "new-school-form";
 	}
 
 	@RequestMapping("/schools/details")
