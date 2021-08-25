@@ -7,17 +7,25 @@
 </head>
 <body><center>
 Enter The Details
-<form:form method="POST"  action="subjectdetails"  modelAttribute="subject">
-Subject ID:<form:input path="subjectId" />
+<form:form method="POST"  action="examsdetails"  modelAttribute="exam">
+Class ID:<form:input path="classId" />
 <br>
 <br>
-Subject Name :<form:input path="subjectName" />
+Subject ID :<form:input path="subjectId" />
 <br>
 <br>
-IS_ELECTIVE:<form:input path="isElective" />
+
+Exam Name :<form:input path="examName" />
+<br>
+<br>
+Exam Time :<form:input path="examTime" />
  <br>
 <br>
+ Exam Date:<form:input path="examDate" />
+<br>
+<br>
  
+
 <input type="submit" value="ADD"/>
 </form:form>
 </center>

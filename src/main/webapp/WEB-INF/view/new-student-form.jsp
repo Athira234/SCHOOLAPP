@@ -11,9 +11,6 @@ Enter The Details
 Class ID:<form:input path="studentClassId" />
 <br>
 <br>
-Student ID :<form:input path="studentId" />
-<br>
-<br>
 Student Name :<form:input path="studentName" />
 <br>
 <br>

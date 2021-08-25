@@ -20,7 +20,7 @@ import com.entlogics.schoolapp.repo.SchoolRepository;
 @Service
 public class SchoolService implements ISchoolService {
 
-	public static List<School> listOfSchools = new ArrayList<School>();
+	
 
 	public ISchoolRepository repo;
 
@@ -109,7 +109,7 @@ public class SchoolService implements ISchoolService {
 	public List<School> getAllSchools()
 
 	{
-		listOfSchools = repo.findAllSchools();
+		List<School> listOfSchools = repo.findAllSchools();
 
 		return listOfSchools;
 	}
@@ -118,7 +118,6 @@ public class SchoolService implements ISchoolService {
 	public School getSchool(int schoolId) {
 
 		School school = repo.findSchool(schoolId);
-		
 
 		return school;
 
@@ -171,38 +170,6 @@ public class SchoolService implements ISchoolService {
 	public void deleteSchool(int schoolId) {
 		repo.deleteSchool(schoolId);
 
-	}
-
-
-
-	@Override
-	public int addClass(SchoolClass c) {
-		System.out.println("inside addClass() SchoolService");
-		repo.addClass(c);
-		return c.getClassId();
-		
-	}
-
-	@Override
-	public int addStudent(Student s) {
-		System.out.println("inside addStudent() SchoolService");
-		repo.addStudent(s);
-		return s.getStudentId();
-	}
-
-	@Override
-	public int addExam(Exam e) {
-		System.out.println("inside addExam() SchoolService");
-		repo.addExam(e);
-		return e.getExamId();
-	}
-
-	@Override
-	public int addSubject(Subject sub) {
-		System.out.println("inside addSubject() SchoolService");
-		repo.addSubject(sub);
-		return sub.getSubjectId();
-		
 	}
 
 }

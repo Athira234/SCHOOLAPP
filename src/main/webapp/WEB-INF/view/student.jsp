@@ -25,23 +25,28 @@
 	</style>
 </head>
 <body>
-	<center><U>
-	EXAM LIST</U> <br><br>
+<center>
+		<U>STUDENT LIST</U> <br> <br>
+		
 		<table border=1>
 			<th>Sl.No</th>
-			<th>Exam Name</th>
+			<th>Student Name</th>
+			
 
-			<c:forEach items="${examList}" var="exam">
+
+
+			<c:forEach items="${studentList}" var="student">
 				<tr>
-					<td></td>
-					<td><c:out value="${exam.examName}" /></td>
-
+				      <td> </td>
+					<td><c:out value="${student.studentName}" /></td>
+					
 				</tr>
 
 			</c:forEach>
 		</table>
-		<br><br>
-			<a href="/myshoolapp/exams/addExamForm"> <input type="submit" value="ADD NEW Exam" /></a><br><br>
-	</center>
-</body>
+	
+
+<a href="students/addStudentForm"> <input type="submit" value="ADD NEW STUDENT" /></a><br><br>
+<a href="students/1">Details of Student 1</a><br>
+</center></body>
 </html>

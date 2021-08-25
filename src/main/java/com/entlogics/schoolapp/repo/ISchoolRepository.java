@@ -2,7 +2,6 @@ package com.entlogics.schoolapp.repo;
 
 import java.util.List;
 
-
 import org.springframework.stereotype.Repository;
 
 import com.entlogics.schoolapp.models.Exam;
@@ -10,10 +9,10 @@ import com.entlogics.schoolapp.models.School;
 import com.entlogics.schoolapp.models.SchoolClass;
 import com.entlogics.schoolapp.models.Student;
 import com.entlogics.schoolapp.models.Subject;
+
 @Repository
 public interface ISchoolRepository {
 
-	
 	public List<School> findAllSchools();
 
 	public School findSchool(int schoolId);
@@ -31,11 +30,5 @@ public interface ISchoolRepository {
 	public void editSchool(School school);
 
 	public void deleteSchool(int schoolId);
-	
-	public int addClass(SchoolClass c);
-	public int addStudent(Student s);
 
-	public int addExam(Exam e);
-
-	public int addSubject(Subject sub);
 }

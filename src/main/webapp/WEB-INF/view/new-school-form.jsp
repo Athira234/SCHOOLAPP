@@ -1,3 +1,4 @@
+
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
@@ -7,18 +8,18 @@
 </head>
 <body><center>
 Enter The Details
-<form:form method="POST"  action="classdetails"  modelAttribute="schoolClass">
-School ID:<form:input path="classSchoolId" />
-<br>
-<br>
-Class ID :<form:input path="classId" />
-<br>
-<br>
-Class Name :<form:input path="className" />
-<br>
-<br>
- Class Teacher Name :<form:input path="classTeacherName" />
+<form:form method="POST"  action="details"  modelAttribute="school">
 
+School Name :<form:input path="SchoolName" />
+<br>
+<br>
+ Address :<form:input path="SchoolAddress" />
+<br>
+<br>
+ Phone :<form:input path="SchoolPhone" />
+<br>
+<br>
+ Email :<form:input path="SchoolEmail" />
 
 <input type="submit" value="ADD"/>
 </form:form>
