@@ -46,7 +46,7 @@
 		</table>
 	
 
-<a href="students/addStudentForm"> <input type="submit" value="ADD NEW STUDENT" /></a><br><br>
-<a href="students/1">Details of Student 1</a><br>
+
+
 </center></body>
 </html>

@@ -41,7 +41,7 @@
 			</c:forEach>
 		</table>
 		<br><br>
-		<a href="/myshoolapp/students/addStudentForm"> <input type="submit" value="ADD NEW STUDENT" /></a><br><br>
+		<%--<a href="/myshoolapp/students/addStudentForm"> <input type="submit" value="ADD NEW STUDENT" /></a><br><br>--%>
 	</center>
 </body>
 </html>

@@ -38,8 +38,8 @@ tr td:first-child:before {
 			</c:forEach>
 		</table>
 		<br>
-		<br> <a href="/myshoolapp/subjects/addSubjectForm"> <input type="submit"
-			value="ADD NEW SUBJECT" /></a><br>
+		<%--<br> <a href="/myshoolapp/subjects/addSubjectForm"> <input type="submit"
+			value="ADD NEW SUBJECT" /></a><br> --%>
 		<br>
 	</center>
 </body>
