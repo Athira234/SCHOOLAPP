@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,11 +8,20 @@
 </head>
 <body><center>
 Enter The Details
-<form:form method="POST"  action="classdetails"  modelAttribute="schoolClass">
-School ID:<form:input path="classSchoolId" />
+<form:form method="POST"  action="classdetails"  modelAttribute="schoolClass" >
+<%-- School ID:<form:input path="classSchoolId" />--%>
 <br>
 <br>
 
+School ID :
+<select id="classSchoolId" name="classSchoolId">
+<c:forEach items="${schools}" var="school">
+  <option value="${school.schoolId}" >${school.schoolName} 
+  </option>
+  
+  </c:forEach>
+ </select>
+<br><br>
 Class Name :<form:input path="className" />
 <br>
 <br>

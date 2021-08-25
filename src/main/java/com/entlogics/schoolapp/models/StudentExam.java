@@ -18,33 +18,35 @@ import javax.persistence.Table;
 @Table(name = "lt_student_exam")
 @IdClass(StudentExam.class)
 public class StudentExam implements Serializable {
-    @Id
+	@Id
+	@Column(name = "student_id")
+	private int studentId;
 	@ManyToOne
-	@JoinColumn(name = "student_id")
+	@JoinColumn(name = "student_id", referencedColumnName = "student_id", insertable = false, updatable = false)
 	private Student student;
-	
-    @Id
+
+	@Id
+	@Column(name = "exam_id")
+	private int examId;
 	@ManyToOne
-	@JoinColumn(name ="exam_id")
+	@JoinColumn(name = "exam_id", referencedColumnName = "exam_id", insertable = false, updatable = false)
 	private Exam exam;
-    
+
 	@Column(name = "marks")
 	private int marks;
-	
+
 	@Column(name = "grade")
 	private char grade;
-	
+
+	enum resultstatus {
+		PASS, FAIL;
+	}
+
 	@Column(name = "result_status")
-	private char resultstatus;
-	
+	private resultstatus resultstatus;
+
 	@Column(name = "is_present")
 	private boolean isPresent;
-
-	public StudentExam(Student student, Exam exam) {
-		super();
-		this.student = student;
-		this.exam = exam;
-	}
 
 	public Student getStudent() {
 		return student;
@@ -78,14 +80,6 @@ public class StudentExam implements Serializable {
 		this.grade = grade;
 	}
 
-	public char getResultstatus() {
-		return resultstatus;
-	}
-
-	public void setResultstatus(char resultstatus) {
-		this.resultstatus = resultstatus;
-	}
-
 	public boolean isPresent() {
 		return isPresent;
 	}
@@ -94,5 +88,28 @@ public class StudentExam implements Serializable {
 		this.isPresent = isPresent;
 	}
 
-	
+	public int getStudentId() {
+		return studentId;
+	}
+
+	public void setStudentId(int studentId) {
+		this.studentId = studentId;
+	}
+
+	public int getExamId() {
+		return examId;
+	}
+
+	public void setExamId(int examId) {
+		this.examId = examId;
+	}
+
+	public resultstatus getResultstatus() {
+		return resultstatus;
+	}
+
+	public void setResultstatus(resultstatus resultstatus) {
+		this.resultstatus = resultstatus;
+	}
+
 }

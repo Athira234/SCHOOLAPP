@@ -1,9 +1,12 @@
 package com.entlogics.schoolapp.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.entlogics.schoolapp.models.Exam;
+import com.entlogics.schoolapp.models.Student;
 import com.entlogics.schoolapp.repo.IExamRepository;
 import com.entlogics.schoolapp.repo.ISchoolRepository;
 
@@ -18,9 +21,16 @@ public class ExamService implements IExamService {
 	@Override
 	public int addExam(Exam e) {
 
-		System.out.println("inside addExam() SchoolService");
+		System.out.println("inside addExam() ExamService");
 		erepo.addExam(e);
 		return e.getExamId();
+	}
+	@Override
+	public List<Exam> getExams(int classId, int subjectId) {
+		System.out.println("inside getExams() ExamService");
+		List<Exam> exams = erepo.findExams(classId,subjectId);
+
+		return exams;
 	}
 
 }

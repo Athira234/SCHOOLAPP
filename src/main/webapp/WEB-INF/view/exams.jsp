@@ -35,7 +35,7 @@
 				<tr>
 					<td></td>
 					<td><c:out value="${exam.examName}" /></td>
-
+                    
 				</tr>
 
 			</c:forEach>

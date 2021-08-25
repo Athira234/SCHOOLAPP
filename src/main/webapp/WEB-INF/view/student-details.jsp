@@ -13,7 +13,8 @@ STUDENT DETAILS</U><br><br>
 				Address    : ${student.studentAddress}<br><br>
 				Phone      : ${student.studentPhone}<br><br>
 				Email      : ${student.studentEmail}<br><br>
-			
+			<a href="${student.studentId}/subjects"><input type="submit" value="ADD SUBJECT"/><br><br>
+			<a href="${student.studentId}/exams"><input type="submit" value="ADD EXAM"/><br><br>
 	</center>			
 </body>
 </html>

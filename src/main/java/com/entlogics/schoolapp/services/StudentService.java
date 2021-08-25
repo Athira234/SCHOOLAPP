@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 
 import com.entlogics.schoolapp.models.School;
 import com.entlogics.schoolapp.models.Student;
+import com.entlogics.schoolapp.models.StudentExam;
+import com.entlogics.schoolapp.models.StudentSubject;
 import com.entlogics.schoolapp.repo.IClassRepository;
 import com.entlogics.schoolapp.repo.IStudentRepository;
 @Service
@@ -40,6 +42,19 @@ public class StudentService implements IStudentService {
 		List<Student> students = srepo.findStudents(studentClassId);
 
 		return students;
+	}
+
+	@Override
+	public void addSubjectsForStudent(StudentSubject stsubjects) {
+		System.out.println("inside addSubjectsForStudent Method in Studentservice");
+		srepo.addSubject(stsubjects);
+	}
+
+	@Override
+	public void addExamsForStudent(StudentExam stexams) {
+	
+		System.out.println("inside addExamsForStudent Method in Studentservice");
+		srepo.addExam(stexams);
 	}
 
 }

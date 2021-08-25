@@ -25,7 +25,7 @@ public class SchoolClass {
 	@Column(name = "class_teacher")
 	private String classTeacherName;
 	@Column(name = "school_id")
-	private int classSchoolId;
+	private Integer classSchoolId;
 	@ManyToOne
 	@JoinColumn(name = "school_id",referencedColumnName="school_id",insertable=false, updatable=false)
 	private School schoolOfClass;

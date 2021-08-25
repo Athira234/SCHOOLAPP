@@ -1,4 +1,5 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +17,7 @@
 <a href="classes">Add New Class</a><br>
 <a href="students/addStudentForm"> Add Students</a><br>
 <a href="students/1">Details of Student 1</a><br>
-<a href="exams">Add new Exams</a><br>
+<a href="exams/addExamForm">Add new Exam</a><br>
 <a href="subjects">Add new Subject</a><br>
 </center><br><br>
 <form action="students">
@@ -32,12 +33,30 @@ Select Class ID :
   <option value="5" >5
   </center>
 </select>
-
- <%--
-<input type="text" name="classId"><br>
-<input type="text" name="classId"><br> --%>
 <input type="submit">
 </form>
+<br><br>
+<form action="exams">
+Exam List<center>
+<br>
 
+Subject Name :
+<select id="subjectId" name="subjectId">
+<c:forEach items="${subjectList}" var="subject">
+  <option value="${subject.subjectId}" >${subject.subjectName} 
+  </option>
+</c:forEach>
+</select>
+Class Name :
+<select id="classId" name="classId">
+<c:forEach items="${classList}" var="classes">
+  <option value="${classes.classId}" >${classes.className} 
+  </option>
+  
+  </c:forEach>
+ </select>
+ <input type="submit">
+ </center>
+ </form>
 </body>
 </html>

@@ -21,13 +21,15 @@ public class ClassRepository implements IClassRepository {
 	@Override
 	public int addClass(SchoolClass c) {
 		System.out.println("Inside addClass() in repo");
-	
+	    System.out.println("school id "+c.getClassSchoolId());
+	    System.out.println("class name"+c.getClassName());
 		Session session = sfactory.getSessionFactory().openSession();
 
-		session.beginTransaction();
-		session.save(c);
-		session.getTransaction().commit();
+			session.beginTransaction();
+			session.save(c);
+			session.getTransaction().commit();
+			
+		
 		return c.getClassId();
-
 	}
 }
