@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 
 import com.entlogics.schoolapp.models.SchoolClass;
 import com.entlogics.schoolapp.repo.IClassRepository;
-import com.entlogics.schoolapp.repo.ISchoolRepository;
 
 @Service
 public class ClassService implements IClassService {

@@ -55,7 +55,6 @@ public class SchoolRepository implements ISchoolRepository {
 	public School findSchool(int schoolId) {
 		System.out.println("Inside findSchool() method in SchoolRepository");
 		Session session = sfactory.getSessionFactory().openSession();
-
 		// find details of one school
 		session.beginTransaction();
 		// getting school with particular schoolId

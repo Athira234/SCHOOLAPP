@@ -18,7 +18,7 @@ import javax.persistence.Table;
 public class SchoolClass {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "class_id",nullable=false)
+	@Column(name = "class_id", nullable = false)
 	private int classId;
 	@Column(name = "class_name")
 	private String className;
@@ -27,7 +27,7 @@ public class SchoolClass {
 	@Column(name = "school_id")
 	private Integer classSchoolId;
 	@ManyToOne
-	@JoinColumn(name = "school_id",referencedColumnName="school_id",insertable=false, updatable=false)
+	@JoinColumn(name = "school_id", referencedColumnName = "school_id", insertable = false, updatable = false)
 	private School schoolOfClass;
 
 	@OneToMany(mappedBy = "classOfStudent", cascade = CascadeType.ALL)
@@ -38,13 +38,7 @@ public class SchoolClass {
 
 	public SchoolClass() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	public SchoolClass(int classId, String className) {
-		super();
-		this.classId = classId;
-		this.className = className;
 	}
 
 	public int getClassId() {
@@ -94,7 +88,6 @@ public class SchoolClass {
 	public void setExamsOfClass(List<Exam> examsOfClass) {
 		this.examsOfClass = examsOfClass;
 	}
-	
 
 	public int getClassSchoolId() {
 		return classSchoolId;
@@ -110,11 +103,11 @@ public class SchoolClass {
 				+ "]";
 	}
 
-	/*@Override
-	public String toString() {
-		return "SchoolClass [classId=" + classId + ", className=" + className + ", classTeacherName=" + classTeacherName
-				+ ", schoolOfClass=" + schoolOfClass + ", studentsOfClass=" + studentsOfClass + ", examsOfClass="
-				+ examsOfClass + "]";
-	}*/
+	/*
+	 * @Override public String toString() { return "SchoolClass [classId=" + classId
+	 * + ", className=" + className + ", classTeacherName=" + classTeacherName +
+	 * ", schoolOfClass=" + schoolOfClass + ", studentsOfClass=" + studentsOfClass +
+	 * ", examsOfClass=" + examsOfClass + "]"; }
+	 */
 
 }

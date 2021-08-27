@@ -9,16 +9,14 @@
 </head>
 <body>
 	<center>
-		<U>SCHOOL LIST</U> <br> <br>
-		<a href="schools/add"> <input type="submit" value="ADD NEW SCHOOL" /></a><br><br>
+		<U>SCHOOL LIST</U> <br> <br> <a href="schools/add"> <input
+			type="submit" value="ADD NEW SCHOOL" /></a><br> <br>
 		<table border=1>
 			<th>Sl.No</th>
 			<th>School Name</th>
 			<th>School Address</th>
 			<th>Edit</th>
 			<th>Delete</th>
-
-
 
 			<c:forEach items="${schoolList}" var="school">
 				<tr>

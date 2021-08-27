@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.entlogics.schoolapp.models.Exam;
-import com.entlogics.schoolapp.models.Student;
+
 @Repository
 public class ExamRepository implements IExamRepository {
 	public SessionFactory sfactory;
@@ -22,12 +22,9 @@ public class ExamRepository implements IExamRepository {
 
 	@Override
 	public int addExam(Exam e) {
-		System.out.println("Inside addExam() in repo");
-
+		System.out.println("Inside addExam() in ExamRepository");
 		Session session = sfactory.getSessionFactory().openSession();
-
 		session.beginTransaction();
-
 		session.save(e);
 		session.getTransaction().commit();
 		return e.getExamId();
@@ -35,25 +32,21 @@ public class ExamRepository implements IExamRepository {
 
 	@Override
 	public List<Exam> findExams(int classId, int subjectId) {
-		System.out.println("Inside findExams() in Exam repo");
+		System.out.println("Inside findExams() in ExamRepository");
 		Session session = sfactory.getSessionFactory().openSession();
 		session.beginTransaction();
 		List<Exam> exams = session.createQuery("from Exam").getResultList();
-		
 		ListIterator litr = exams.listIterator();
-	
 		List<Exam> exams1 = new ArrayList<Exam>();
 
 		for (Exam e : exams) {
-				if (e.getClassId() == classId && e.getSubjectId()==subjectId)
-					
-					exams1.add(e);
-				}
-			
+			if (e.getClassId() == classId && e.getSubjectId() == subjectId)
+
+				exams1.add(e);
+		}
 		session.getTransaction().commit();
-			
 		return exams1;
-	
+
 	}
 
 }

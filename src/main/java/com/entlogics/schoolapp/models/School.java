@@ -5,22 +5,18 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.JoinColumn;
 
 @Entity
 @Table(name = "dt_school")
 public class School {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "school_id",nullable=false)
+	@Column(name = "school_id", nullable = false)
 	private int schoolId;
 	@Column(name = "name")
 	private String schoolName;
@@ -43,17 +39,8 @@ public class School {
 	@OneToMany(mappedBy = "schoolOfClass", cascade = CascadeType.ALL)
 	private List<SchoolClass> classesOfSchool;
 
-	public School(int schoolId, String schoolName, String schoolAddress, String schoolPhone) {
-		super();
-		this.schoolId = schoolId;
-		this.schoolName = schoolName;
-		this.schoolAddress = schoolAddress;
-		this.schoolEmail = schoolEmail;
-		this.schoolPhone = schoolPhone;
-	}
-
 	public School() {
-		// TODO Auto-generated constructor stub
+
 	}
 
 	public int getSchoolId() {

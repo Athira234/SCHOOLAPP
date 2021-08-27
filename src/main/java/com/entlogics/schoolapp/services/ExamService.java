@@ -6,9 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.entlogics.schoolapp.models.Exam;
-import com.entlogics.schoolapp.models.Student;
 import com.entlogics.schoolapp.repo.IExamRepository;
-import com.entlogics.schoolapp.repo.ISchoolRepository;
 
 @Service
 public class ExamService implements IExamService {

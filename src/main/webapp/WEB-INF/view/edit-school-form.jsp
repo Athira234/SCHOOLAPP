@@ -8,9 +8,8 @@
 <title>EDIT SCHOOL DETAILS</title>
 </head>
 <body>
-	<form:form method="POST" action="editdetails"
-		modelAttribute="school">
-School Id :<form:hidden  path="SchoolId" />
+	<form:form method="POST" action="editdetails" modelAttribute="school">
+School Id :<form:hidden path="SchoolId" />
 		<br>
 		<br>
 School Name :<form:input path="SchoolName" />

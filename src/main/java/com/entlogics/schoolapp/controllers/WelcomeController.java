@@ -19,33 +19,23 @@ import com.entlogics.schoolapp.services.ISchoolService;
 @Controller
 @RequestMapping("/")
 public class WelcomeController {
-
 	public ISchoolService iSchoolService;
 
-	
-   @Autowired
+	@Autowired
 	public void setiSchoolService(ISchoolService iSchoolService) {
 		this.iSchoolService = iSchoolService;
 	}
 
-
-
 	@RequestMapping("/")
 	public String welcome(Model model) {
-		System.out.println("Inside welcome method");
+		System.out.println("Inside welcome() method in welcomecontroller");
 		School school = iSchoolService.getSchool(1);
-		List<Subject> subjects=new ArrayList<Subject>();
-		List<SchoolClass> classes=new ArrayList<SchoolClass>();
-		
-			
-				subjects.addAll(iSchoolService.getAllSubjects(1));
-				classes.addAll(iSchoolService.getAllClasses(1));
-				
-			
-			
+		List<Subject> subjects = new ArrayList<Subject>();
+		List<SchoolClass> classes = new ArrayList<SchoolClass>();
+		subjects.addAll(iSchoolService.getAllSubjects(1));
+		classes.addAll(iSchoolService.getAllClasses(1));
 		model.addAttribute("classList", classes);
 		model.addAttribute("subjectList", subjects);
-		
 		return "welcome";
 	}
 

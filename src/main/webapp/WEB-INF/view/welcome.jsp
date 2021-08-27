@@ -47,15 +47,12 @@ Subject Name :
   </option>
 </c:forEach>
 </select>
-Class Name :
-<select id="classId" name="classId">
-<c:forEach items="${classList}" var="classes">
-  <option value="${classes.classId}" >${classes.className} 
-  </option>
-  
-  </c:forEach>
- </select>
- <input type="submit">
+Class Name : <select id="classId" name="classId">
+				<c:forEach items="${classList}" var="classes">
+					<option value="${classes.classId}">${classes.className}</option>
+
+				</c:forEach>
+			</select> <input type="submit">
  </center>
  </form>
 </body>

@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="lt_school_subject")
+@Table(name = "lt_school_subject")
 @IdClass(SchoolSubject.class)
 public class SchoolSubject implements Serializable {
 	@Id
@@ -23,20 +23,12 @@ public class SchoolSubject implements Serializable {
 	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
 	@JoinColumn(name = "subject_id")
 	private Subject subject;
-	@Column(name="subject_HOD")
+	@Column(name = "subject_HOD")
 	private String subjectHOD;
-
-	
 
 	public SchoolSubject() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	public SchoolSubject(School school, Subject subject) {
-		super();
-		this.school = school;
-		this.subject = subject;
 	}
 
 	public School getSchool() {
@@ -62,7 +54,5 @@ public class SchoolSubject implements Serializable {
 	public void setSubjectHOD(String subjectHOD) {
 		this.subjectHOD = subjectHOD;
 	}
-
-
 
 }

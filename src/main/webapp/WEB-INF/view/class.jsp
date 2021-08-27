@@ -5,7 +5,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="classes/addClassForm"> <input type="submit" value="ADD NEW CLASS" /></a><br><br>
+	<a href="classes/addClassForm"> <input type="submit"
+		value="ADD NEW CLASS" /></a>
+	<br>
+	<br>
 
 </body>
 </html>

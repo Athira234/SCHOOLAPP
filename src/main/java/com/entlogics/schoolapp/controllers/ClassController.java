@@ -18,11 +18,12 @@ import com.entlogics.schoolapp.services.ISchoolService;
 @ComponentScan
 public class ClassController {
 	IClassService iClassService;
-	
+
 	@Autowired
 	public void setiClassService(IClassService iClassService) {
 		this.iClassService = iClassService;
 	}
+
 	ISchoolService iSchoolService;
 
 	@Autowired
@@ -30,26 +31,20 @@ public class ClassController {
 		this.iSchoolService = iSchoolService;
 	}
 
-
-
 	@RequestMapping("/classes")
 	String getAllClasses() {
-       
 		System.out.println("inside getAllClasses() method");
-	
 		return "class";
 	}
-	
-	
-	
+
 	@RequestMapping("/classes/addClassForm")
 	String loadNewClassForm(Model m) {
-       
+
 		System.out.println("inside loadNewClassForm() method");
 		SchoolClass theClass = new SchoolClass();
-	    //get list of schools
+		// get list of schools
 		List<School> schools = iSchoolService.getAllSchools();
-		//sent the list of schools to jsp
+		// sent the list of schools to jsp
 		m.addAttribute("schools", schools);
 		m.addAttribute("schoolClass", theClass);
 		return "new-class-form";
@@ -58,7 +53,7 @@ public class ClassController {
 	@RequestMapping("/classes/classdetails")
 	public String saveClass(@ModelAttribute("schoolClass") SchoolClass c) {
 		System.out.println("Inside saveClass() method of SchoolController");
-		 iClassService.addClass(c);
+		iClassService.addClass(c);
 		return "success";
 	}
 }

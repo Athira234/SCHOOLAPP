@@ -7,26 +7,24 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <style type="text/css">
-		body
-		{
-		    counter-reset: Serial;          
-		}
+body {
+	counter-reset: Serial;
+}
 
-		table
-		{
-		    border-collapse: separate;
-		}
+table {
+	border-collapse: separate;
+}
 
-		tr td:first-child:before
-		{
-		  counter-increment: Serial;      
-		  content: counter(Serial); 
-		}
-	</style>
+tr td:first-child:before {
+	counter-increment: Serial;
+	content: counter(Serial);
+}
+</style>
 </head>
 <body>
-	<center><U>
-	EXAM LIST</U> <br><br>
+	<center>
+		<U> EXAM LIST</U> <br>
+		<br>
 		<table border=1>
 			<th>Sl.No</th>
 			<th>Exam Name</th>
@@ -35,12 +33,13 @@
 				<tr>
 					<td></td>
 					<td><c:out value="${exam.examName}" /></td>
-                    
+
 				</tr>
 
 			</c:forEach>
 		</table>
-		<br><br>
+		<br>
+		<br>
 		<%--	<a href="/myshoolapp/exams/addExamForm"> <input type="submit" value="ADD NEW Exam" /></a><br><br>--%>
 	</center>
 </body>

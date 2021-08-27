@@ -10,8 +10,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -37,8 +35,8 @@ public class Student {
 	@Column(name = "phonenumber")
 	private String studentPhone;
 
-	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
-	@JoinColumn(name = "class_id",referencedColumnName="class_id",insertable=false, updatable=false)
+	@ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "class_id", referencedColumnName = "class_id", insertable = false, updatable = false)
 	private SchoolClass classOfStudent;
 	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL)
 	List<StudentExam> examsForStudent;
@@ -47,13 +45,7 @@ public class Student {
 
 	public Student() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
 
-	public Student(int studentId, String studentName) {
-		super();
-		this.studentId = studentId;
-		this.studentName = studentName;
 	}
 
 	public int getStudentId() {
@@ -135,11 +127,10 @@ public class Student {
 	public void setStudentClassId(int studentClassId) {
 		this.studentClassId = studentClassId;
 	}
+
 	@Override
 	public String toString() {
 		return "Student [studentId=" + studentId + ", studentName=" + studentName + "]";
 	}
-
-	
 
 }

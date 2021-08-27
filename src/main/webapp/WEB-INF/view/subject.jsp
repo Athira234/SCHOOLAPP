@@ -6,7 +6,10 @@
 </head>
 <body>
 
-<a href="subjects/addSubjectForm"> <input type="submit" value="ADD NEW SUBJECT" /></a><br><br>
+	<a href="subjects/addSubjectForm"> <input type="submit"
+		value="ADD NEW SUBJECT" /></a>
+	<br>
+	<br>
 
 </body>
 </html>

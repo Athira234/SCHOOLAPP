@@ -14,25 +14,23 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "lt_student_subject")
 @IdClass(StudentSubject.class)
-public class StudentSubject implements Serializable{
+public class StudentSubject implements Serializable {
 	public StudentSubject() {
 		super();
-		
-	}
 
-	
+	}
 
 	@Id
 	@Column(name = "student_id")
 	private int studentId;
 	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
-	@JoinColumn(name = "student_id",referencedColumnName="student_id",insertable=false, updatable=false)
+	@JoinColumn(name = "student_id", referencedColumnName = "student_id", insertable = false, updatable = false)
 	private Student student;
 	@Id
 	@Column(name = "subject_id")
 	private int subjectId;
 	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
-	@JoinColumn(name = "subject_id",referencedColumnName="subject_id",insertable=false, updatable=false)
+	@JoinColumn(name = "subject_id", referencedColumnName = "subject_id", insertable = false, updatable = false)
 	private Subject subject;
 	@Column(name = "attendance_percentage")
 	private float attendancePercentage;
@@ -45,12 +43,6 @@ public class StudentSubject implements Serializable{
 
 	public void setNumberOfAssignments(int numberOfAssignments) {
 		this.numberOfAssignments = numberOfAssignments;
-	}
-
-	public StudentSubject(Student student, Subject subject) {
-		super();
-		this.student = student;
-		this.subject = subject;
 	}
 
 	public Student getStudent() {
