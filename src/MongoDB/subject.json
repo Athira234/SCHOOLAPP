@@ -1,0 +1,79 @@
+[{
+  "_id": {
+    "$oid": "6130ddb6262c6b5204847edf"
+  },
+  "subject_name": "ENGLISH",
+  "students": [
+    {
+      "$oid": "6130d90f262c6b5204847ed0"
+    },
+    {
+      "$oid": "6130d90f262c6b5204847ed4"
+    }
+  ],
+  "schools": [
+    {
+      "$oid": "6130c872262c6b5204847ea2"
+    }
+  ],
+  "exams": [
+    {
+      "$oid": "6130da5c262c6b5204847ed4"
+    },
+    {
+      "$oid": "6130da5c262c6b5204847ed5"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6130dde9262c6b5204847ee0"
+  },
+  "subject_name": "MATHS",
+  "students": [
+    {
+      "$oid": "6130d90f262c6b5204847ed4"
+    },
+    {
+      "$oid": "6130d90f262c6b5204847ed3"
+    },
+    {
+      "$oid": "6130d90f262c6b5204847ed0"
+    }
+  ],
+  "schools": [
+    {
+      "$oid": "6130c872262c6b5204847ea2"
+    }
+  ],
+  "exams": [
+    {
+      "$oid": "6130da5c262c6b5204847ed4"
+    },
+    {
+      "$oid": "6130da5c262c6b5204847ed5"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6130de2a262c6b5204847ee1"
+  },
+  "subject_name": "SCIENCE",
+  "students": [
+    {
+      "$oid": "6130d90f262c6b5204847ed3"
+    }
+  ],
+  "schools": [
+    {
+      "$oid": "6130c872262c6b5204847ea2"
+    }
+  ],
+  "exams": [
+    {
+      "$oid": "6130da5c262c6b5204847ed4"
+    },
+    {
+      "$oid": "6130da5c262c6b5204847ed5"
+    }
+  ]
+}]

@@ -1,0 +1,55 @@
+[{
+  "_id": {
+    "$oid": "6130cc25262c6b5204847eab"
+  },
+  "class_name": "STD_1",
+  "class_teacher_name": "ANURADHA",
+  "students": [
+    {
+      "$oid": "6130d90f262c6b5204847ed3"
+    },
+    {
+      "$oid": "6130d90f262c6b5204847ed0"
+    },
+    {
+      "$oid": "6130d90f262c6b5204847ed4"
+    }
+  ],
+  "exams": [
+    {
+      "$oid": "6130da5c262c6b5204847ed4"
+    },
+    {
+      "$oid": "6130da5c262c6b5204847ed5"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6130cc7d262c6b5204847eac"
+  },
+  "class_name": "STD_2",
+  "class_teacher_name": "RAVI",
+  "exams": [
+    {
+      "$oid": "6130da5c262c6b5204847ed5"
+    },
+    {
+      "$oid": "6130da5c262c6b5204847ed4"
+    }
+  ],
+  "students": [
+    ""
+  ]
+},{
+  "_id": {
+    "$oid": "6130cce6262c6b5204847ead"
+  },
+  "class_name": "STD_3",
+  "class_teacher_name": "ANUGRAHA",
+  "students": [
+    ""
+  ],
+  "exams": [
+    ""
+  ]
+}]

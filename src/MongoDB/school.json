@@ -1,0 +1,70 @@
+[
+  {
+    "_id": {
+      "$oid": "6130c872262c6b5204847ea2"
+    },
+    "school_name": "Mahathma HSS",
+    "school_address": "Bangalore",
+    "school_phone": "2780633",
+    "school_email": "mahathma@gmail.com",
+    "classes": [
+      {
+        "$oid": "6130cc25262c6b5204847eab"
+      },
+      {
+        "$oid": "6130cc7d262c6b5204847eac"
+      },
+      {
+        "$oid": "6130cce6262c6b5204847ead"
+      }
+    ],
+    "subjects": [
+      {
+        "subject_id": {
+          "$oid": "6130ddb6262c6b5204847edf"
+        },
+        "subject_HOD": "RAVISANKAR"
+      },
+      {
+        "subject_id": {
+          "$oid": "6130dde9262c6b5204847ee0"
+        },
+        "subject_HOD": "ANURADHA"
+      }
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6130c872262c6b5204847ea3"
+    },
+    "school_name": "KPRGS HSS",
+    "school_address": "Kannur",
+    "school_phone": "2790633",
+    "school_email": "kprgsghss@gmail.com",
+    "classes": [
+      {
+        "$oid": "6130cc25262c6b5204847eab"
+      },
+      {
+        "$oid": "6130cc7d262c6b5204847eac"
+      },
+      {
+        "$oid": "6130cce6262c6b5204847ead"
+      }
+    ],
+    "subjects": [
+      {
+        "subject_id": {
+          "$oid": "6130ddb6262c6b5204847edf"
+        },
+        "subject_HOD": "AMBIKA"
+      },
+      {
+        "subject_id": {
+          "$oid": "6130dde9262c6b5204847ee0"
+        },
+        "subject_HOD": "ARAVIND"
+      }
+    ]
+  }
+]

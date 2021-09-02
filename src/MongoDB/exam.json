@@ -1,0 +1,39 @@
+[{
+  "_id": {
+    "$oid": "6130da5c262c6b5204847ed4"
+  },
+  "exam_name": "UNIT_TEST",
+  "exam_date": "21/08/21",
+  "exam_time": "1:30PM",
+  "exam_status": "Conducted",
+  "students": [
+    {
+      "$oid": "6130d90f262c6b5204847ed0"
+    },
+    {
+      "$oid": "6130d90f262c6b5204847ed4"
+    },
+    {
+      "$oid": "6130d90f262c6b5204847ed3"
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6130da5c262c6b5204847ed5"
+  },
+  "exam_name": "ANNUAL_TEST",
+  "exam_date": "21/08/21",
+  "exam_time": "9:30AM",
+  "exam_status": "Conducted",
+  "students": [
+    {
+      "$oid": "6130d90f262c6b5204847ed0"
+    },
+    {
+      "$oid": "6130d90f262c6b5204847ed3"
+    },
+    {
+      "$oid": "6130d90f262c6b5204847ed4"
+    }
+  ]
+}]

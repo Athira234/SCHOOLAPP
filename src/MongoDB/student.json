@@ -1,0 +1,136 @@
+[{
+  "_id": {
+    "$oid": "6130d90f262c6b5204847ed0"
+  },
+  "student_name": "ANU",
+  "roll_number": 1,
+  "address": "Rose Villa",
+  "phone_number": "87976568",
+  "email": "anu@gmail.com",
+  "exams": [
+    {
+      "exam_id": {
+        "$oid": "6130da5c262c6b5204847ed4"
+      },
+      "marks": 80,
+      "result_status": "PASS",
+      "is_present": "PRESENT",
+      "grade": "A"
+    },
+    {
+      "exam_id": {
+        "$oid": "6130da5c262c6b5204847ed5"
+      },
+      "marks": 80,
+      "result_status": "PASS",
+      "is_present": "PRESENT",
+      "grade": "A"
+    }
+  ],
+  "subjects": [
+    {
+      "subject_id": {
+        "$oid": "6130ddb6262c6b5204847edf"
+      },
+      "attendance_percentage": 90.2,
+      "number_of_assignments": 3
+    },
+    {
+      "subject_id": {
+        "$oid": "6130dde9262c6b5204847ee0"
+      },
+      "attendance_percentage": 84.2,
+      "number_of_assignments": 3
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6130d90f262c6b5204847ed3"
+  },
+  "student_name": "SINU",
+  "roll_number": 2,
+  "address": "Orchid Villa",
+  "phone_number": "87976568",
+  "email": "sinu@gmail.com",
+  "exams": [
+    {
+      "exam_id": {
+        "$oid": "6130da5c262c6b5204847ed4"
+      },
+      "marks": 80,
+      "result_status": "PASS",
+      "is_present": "PRESENT",
+      "grade": "A"
+    },
+    {
+      "exam_id": {
+        "$oid": "6130da5c262c6b5204847ed5"
+      },
+      "marks": 90,
+      "result_status": "PASS",
+      "is_present": "PRESENT",
+      "grade": "A"
+    }
+  ],
+  "subjects": [
+    {
+      "subject_id": {
+        "$oid": "6130de2a262c6b5204847ee1"
+      },
+      "attendance_percentage": 95.2,
+      "number_of_assignments": 3
+    },
+    {
+      "subject_id": {
+        "$oid": "6130dde9262c6b5204847ee0"
+      },
+      "attendance_percentage": 86.2,
+      "number_of_assignments": 3
+    }
+  ]
+},{
+  "_id": {
+    "$oid": "6130d90f262c6b5204847ed4"
+  },
+  "student_name": "ASHISH",
+  "roll_number": 3,
+  "address": "LILLY",
+  "phone_number": "87976888",
+  "email": "ashish@gmail.com",
+  "exams": [
+    {
+      "exam_id": {
+        "$oid": "6130da5c262c6b5204847ed4"
+      },
+      "marks": 80,
+      "result_status": "PASS",
+      "is_present": "PRESENT",
+      "grade": "A"
+    },
+    {
+      "exam_id": {
+        "$oid": "6130da5c262c6b5204847ed5"
+      },
+      "marks": 80,
+      "result_status": "PASS",
+      "is_present": "PRESENT",
+      "grade": "A"
+    }
+  ],
+  "subjects": [
+    {
+      "subject_id": {
+        "$oid": "6130ddb6262c6b5204847edf"
+      },
+      "attendance_percentage": 90.2,
+      "number_of_assignments": 3
+    },
+    {
+      "subject_id": {
+        "$oid": "6130dde9262c6b5204847ee0"
+      },
+      "attendance_percentage": 84.2,
+      "number_of_assignments": 3
+    }
+  ]
+}]
